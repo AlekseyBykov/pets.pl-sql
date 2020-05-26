@@ -1,5 +1,6 @@
 package alekseybykov.portfolio.plsql;
 
+import alekseybykov.portfolio.plsql.utils.DBConnector;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 

@@ -1,4 +1,4 @@
-package alekseybykov.portfolio.plsql;
+package alekseybykov.portfolio.plsql.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,14 +12,6 @@ final public class DBConnector {
 	public static DBConnector getInstance() {
 		if (instance == null) {
 			instance = new DBConnector();
-		} else {
-			try {
-				if (instance.getConnection().isClosed()) {
-					instance = new DBConnector();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 		}
 		return instance;
 	}
@@ -35,7 +27,7 @@ final public class DBConnector {
 			String username = "scott";
 			String password = "tiger";
 			this.connection = DriverManager.getConnection(url, username, password);
-			connection.setAutoCommit(false);
+			this.connection.setAutoCommit(false);
 		} catch (ClassNotFoundException | SQLException cnfe) {
 			cnfe.printStackTrace();
 		}
