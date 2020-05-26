@@ -9,7 +9,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public abstract class PlSqlTestBase {
+public class PlSqlTestBase {
 
 	private static Connection connection = DBConnector.getInstance().getConnection();
 
