@@ -1,6 +1,5 @@
 package alekseybykov.portfolio.plsql;
 
-import alekseybykov.portfolio.plsql.PlSqlTestBase;
 import org.junit.Test;
 import java.sql.SQLException;
 import static org.junit.Assert.assertEquals;
@@ -29,5 +28,16 @@ public class PlSqlTest extends PlSqlTestBase {
 				+ "   dbms_output.put_line(v_id);\n"
 				+ "end;\n";
 		assertEquals(String.valueOf(1), perform(plSqlCode));
+	}
+
+	@Test
+	public void testUsingDelimiter() throws SQLException {
+		String plSqlCode =
+			"declare\n" +
+				"   v_text varchar2(10):='some text';\n" +
+				"begin\n" +
+				"   dbms_output.put_line('This is '|| v_text);\n" +
+				"end;\n";
+		assertEquals("This is some text", perform(plSqlCode));
 	}
 }
