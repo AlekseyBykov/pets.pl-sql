@@ -1,8 +1,10 @@
 package alekseybykov.portfolio.plsql;
 
 import alekseybykov.portfolio.plsql.utils.DBConnector;
+import alekseybykov.portfolio.plsql.utils.PerformnceAuditor;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -10,6 +12,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class PlSqlTestBase {
+	@Rule
+	public PerformnceAuditor performnceAuditor = new PerformnceAuditor();
 
 	private static Connection connection = DBConnector.getInstance().getConnection();
 

@@ -33,11 +33,11 @@ public class PlSqlTest extends PlSqlTestBase {
 	@Test
 	public void testUsingDelimiter() throws SQLException {
 		String plSqlCode =
-			"declare\n" +
-				"   v_text varchar2(10):='some text';\n" +
-				"begin\n" +
-				"   dbms_output.put_line('This is '|| v_text);\n" +
-				"end;\n";
+			"declare\n"
+				+ "   v_text varchar2(10):='some text';\n"
+				+ "begin\n"
+				+ "   dbms_output.put_line('This is '|| v_text);\n"
+				+ "end;\n";
 		assertEquals("This is some text", perform(plSqlCode));
 	}
 }
