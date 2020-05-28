@@ -10,8 +10,14 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Logger;
+
+import static java.lang.String.format;
 
 public class PlSqlTestBase {
+
+	private static final Logger LOGGER = Logger.getLogger(PlSqlTestBase.class.getPackage().getName());
+
 	@Rule
 	public PerformnceAuditor performnceAuditor = new PerformnceAuditor();
 
@@ -52,6 +58,8 @@ public class PlSqlTestBase {
 
 			callableStatement.registerOutParameter( 2, java.sql.Types.INTEGER );
 			callableStatement.registerOutParameter( 3, java.sql.Types.VARCHAR );
+
+			LOGGER.info(format("Performing PL/SQL: \n%s", plSqlCode));
 			statement.execute(plSqlCode);
 
 			for(;;) {
