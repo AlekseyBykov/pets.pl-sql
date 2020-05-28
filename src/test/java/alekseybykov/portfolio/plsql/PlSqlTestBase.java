@@ -19,6 +19,7 @@ public class PlSqlTestBase {
 
 	@BeforeClass
 	public static void enableDbmsOutput() throws SQLException {
+		System.setProperty("java.util.logging.config.file", ClassLoader.getSystemResource("logging.properties").getPath());
 		try (Statement statement = connection.createStatement()) {
 			statement.executeUpdate("begin dbms_output.enable(null); end;");
 		}
