@@ -18,8 +18,8 @@
 		<jdbc.version>10.2.0.4.0</jdbc.version>
 	</properties>
 
-	<name>apache-commons</name>
-	<description>Various examples of using Oracle PL/SQL.</description>
+	<name>pl-sql</name>
+	<description>Various examples of using Oracle PL/SQL</description>
 	<url>https://alekseybykov.github.io</url>
 
 	<dependencies>

@@ -31,6 +31,7 @@ public class PlSqlTestBase {
 		}
 	}
 
+	// See for more details: https://asktom.oracle.com/pls/asktom/f?p=100:11:0::::P11_QUESTION_ID:45027262935845
 	protected String perform(String plSqlCode) throws SQLException {
 		try (Statement statement = connection.createStatement();
 			 CallableStatement callableStatement = connection.prepareCall(

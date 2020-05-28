@@ -5,8 +5,12 @@ import org.junit.rules.Stopwatch;
 import org.junit.runner.Description;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PerformnceAuditor extends Stopwatch {
+
+	private static final Logger LOGGER = Logger.getLogger(PerformnceAuditor.class.getPackage().getName());
 
 	@Override
 	protected void succeeded(long nanos, Description description) {
@@ -29,7 +33,7 @@ public class PerformnceAuditor extends Stopwatch {
 	}
 
 	private static void log(Description description, String status, long nanos) {
-		System.out.println(String.format("Performance tracking: %s %s, %d ms", description.getMethodName(),
-			status, TimeUnit.NANOSECONDS.toMillis(nanos)));
+		LOGGER.log(Level.INFO, String.format("Performance tracking: %s %s, %d ms", description.getMethodName(),
+				status, TimeUnit.NANOSECONDS.toMillis(nanos)));
 	}
 }
