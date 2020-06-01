@@ -14,6 +14,10 @@ import java.util.logging.Logger;
 
 import static java.lang.String.format;
 
+/**
+ * @author Aleksey Bykov
+ * @since 26.05.2020
+ */
 public class PlSqlTestBase {
 
 	private static final Logger LOGGER = Logger.getLogger(PlSqlTestBase.class.getPackage().getName());

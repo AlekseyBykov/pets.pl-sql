@@ -8,6 +8,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * @author Aleksey Bykov
+ * @since 26.05.2020
+ */
 public class PerformnceAuditor extends Stopwatch {
 
 	private static final Logger LOGGER = Logger.getLogger(PerformnceAuditor.class.getPackage().getName());

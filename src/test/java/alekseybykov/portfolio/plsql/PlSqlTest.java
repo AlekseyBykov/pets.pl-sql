@@ -4,6 +4,10 @@ import org.junit.Test;
 import java.sql.SQLException;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author Aleksey Bykov
+ * @since 26.05.2020
+ */
 public class PlSqlTest extends PlSqlTestBase {
 
 	@Test
